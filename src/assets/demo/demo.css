@@ -41,6 +41,7 @@ body {
 #card_container {
 	width:700px;
 	height:350px;
+  margin-top: 20px;
 }
 #card {
 	animation:backAn 50s infinite;
