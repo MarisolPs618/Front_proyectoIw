@@ -100,7 +100,7 @@ export const SectionPeliculas = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <button type="submit" className="btn btn-info">Agregar Pelicula</button>
+                <button type="submit" class="btn-round mr-1 btn btn-success">Agregar Pelicula</button>
             </form>
 
            
