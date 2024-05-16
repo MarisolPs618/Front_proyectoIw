@@ -19,6 +19,12 @@ export const SectionPelicula = (props) => {
     };
 
 
+    const handleDelete = () => {
+        axios.delete(`http://127.0.0.1:8000/pelicula/${pelicula.pk}`)
+        window.location.reload();
+           
+    };
+
     return (
         <div id="card_container">
             <div id="card">

@@ -32,7 +32,7 @@ import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 // others
 import Peliculas from "views/pages/peliculas.js"
-import Proveedores from "views/pages/proveedores.js"
+import Valoraciones from "views/pages/valoraciones.js"
 import Pelicula from "views/pages/pelicula.js"
 import Nueva from "views/pages/nueva.js"
 import EditarPelicula from "views/pages/editarPelicula.js"
@@ -52,9 +52,10 @@ root.render(
       <Route path='/peliculas/:id' element={<Pelicula />} />
       <Route path='/peliculas/:id/editar' element={<EditarPelicula />} />
       <Route path="/peliculas" element={<Peliculas />} /> 
-      <Route path="/proveedores" element={<Proveedores />} /> 
+      <Route path="/valoraciones" element={<Valoraciones />} /> 
       <Route path="/nueva"  element={<Nueva />} /> 
-      
+      <Route path='/peliculas/:id' element={<Pelicula />} />
+
     </Routes>
   </BrowserRouter>
 );

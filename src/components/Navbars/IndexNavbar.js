@@ -67,12 +67,14 @@ function IndexNavbar() {
     <Navbar className={classnames("fixed-top", navbarColor)} expand="lg">
       <Container>
         <div className="navbar-translate">
-          <NavbarBrand
+        <NavbarBrand
             data-placement="bottom"
-            href="/index"
+            to="/index"
             target="_blank"
-            title="Coded by Creative Tim"
+            title="Home"
+            tag={Link}
           >
+            Home
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
@@ -92,13 +94,24 @@ function IndexNavbar() {
           isOpen={navbarCollapse}
         >
           <Nav navbar>
+          <NavItem>
+              <NavLink
+                data-placement="bottom"
+                href="https://github.com/MarisolPs618/Front_proyectoIw.git"
+                target="_blank"
+                title="Star on GitHub"
+              >
+                <i className="fa fa-github" />
+                <p className="d-lg-none">GitHub</p>
+              </NavLink>
+            </NavItem>
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="/proveedores"
-                title="Proveedores"
+                href="/valoraciones"
+                title="Valoraciones"
               >
-                <i className="fa fa-users" /> Valoraciones
+                <i className="nc-icon nc-chat-33" /> Valoraciones
               </NavLink>
             </NavItem>
             <NavItem>
@@ -107,7 +120,7 @@ function IndexNavbar() {
                 href="/peliculas"
                 title="Peliculas"
               >
-                <i className="fa fa-users" /> Agregar Peliculas
+                <i className="nc-icon nc-simple-add" /> Agregar Pelicula
               </NavLink>
             </NavItem>
             <NavItem>
@@ -116,7 +129,7 @@ function IndexNavbar() {
                 href="/nueva"
                 title="Peliculas"
               >
-                <i className="fa fa-users" /> Lista Peliculas
+                <i className="nc-icon nc-tv-2" /> Lista Peliculas
               </NavLink>
             </NavItem>
           </Nav>

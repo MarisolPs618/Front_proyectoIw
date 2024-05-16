@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PeliculasList from "views/sections/peliculas-sections/sectionList.js";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-
 import IndexHeader from "components/Headers/IndexHeader.js";
 
 export const OtraPagina = () => {
