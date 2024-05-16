@@ -1,26 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import SectionPelicula from "views/sections/peliculas-sections/sectionPelicula"
 
-export const SectionPeliculas = () => {
-    const [peliculas, setPeliculas] = useState([]);
+export const SectionEditar = ({ pelicula, setPeliculas }) => {
     const [formData, setFormData] = useState({
-        name: "",
-        fechaEstreno: "",
-        sinopsis: "",
-        director: "",
-        duracion: 0
+        name: pelicula.name,
+        fechaEstreno: pelicula.fechaEstreno,
+        sinopsis: pelicula.sinopsis,
+        director: pelicula.director,
+        duracion: pelicula.duracion
     });
-
-    useEffect(() => {
-        axios.get('http://127.0.0.1:8000/pelicula/')
-            .then(response => {
-                setPeliculas(response.data);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -29,26 +17,30 @@ export const SectionPeliculas = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8000/pelicula/", formData)
+        axios.put(`http://localhost:8000/pelicula/${pelicula.pk}/`, formData)
             .then(response => {
-                console.log("Pelicula agregada:", response.data);
-                setFormData({
-                    name: "",
-                    fechaEstreno: "",
-                    sinopsis: "",
-                    director: "",
-                    duracion: 0
-                });
-                setPeliculas([...peliculas, response.data]); // Agrega la nueva película a la lista de películas
+                console.log("Pelicula modificada:", response.data);
+                if (setPeliculas) {
+                    setPeliculas(prevPeliculas => {
+                        return prevPeliculas.map(p => {
+                            if (p.pk === pelicula.pk) {
+                                return response.data;
+                            }
+                            return p;
+                        });
+                    });
+                }
+                window.history.back();
             })
+            
             .catch(error => {
-                console.error("Error al agregar la película:", error);
+                console.error("Error al modificar la película:", error);
             });
     };
 
-
     return (
         <div id="section">
+            <h2>Editar Película</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Nombre:</label>
@@ -100,12 +92,10 @@ export const SectionPeliculas = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <button type="submit" className="btn btn-info">Agregar Pelicula</button>
+                <button type="submit" className="btn btn-info">Guardar Cambios</button>
             </form>
-
-           
         </div>
     );
 };
 
-export default SectionPeliculas;
+export default SectionEditar;

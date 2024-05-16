@@ -10,6 +10,15 @@ export const SectionPelicula = (props) => {
            
     };
 
+    const handleDetalles = () => {
+        window.location.href = `/peliculas/${pelicula.pk}`;
+    };
+
+    const handleModify = () => {
+        window.location.href = `/peliculas/${pelicula.pk}/editar`;
+    };
+
+
     return (
         <div id="card_container">
             <div id="card">
@@ -20,7 +29,8 @@ export const SectionPelicula = (props) => {
                     <p>{pelicula.sinopsis}</p>
                     <button>Valorar</button>
                     <button onClick={handleDelete}>Eliminar</button>
-                    <button>Modificar</button>
+                    <button onClick={handleDetalles}>Detalles</button>
+                    <button onClick={handleModify}>Modificar</button>
                 </div>
             </div>
         </div>
