@@ -17,13 +17,11 @@ export const SectionPelicula = (props) => {
     const handleModify = () => {
         window.location.href = `/peliculas/${pelicula.pk}/editar`;
     };
-
-
-    const handleDelete = () => {
-        axios.delete(`http://127.0.0.1:8000/pelicula/${pelicula.pk}`)
-        window.location.reload();
-           
+    
+    const handleValor = () => {
+        window.location.href = `/valoracion/${pelicula.pk}/editar`;
     };
+
 
     return (
         <div id="card_container">
@@ -33,7 +31,7 @@ export const SectionPelicula = (props) => {
                     <h1>{pelicula.name}<small>{pelicula.fechaEstreno}</small></h1>
                     <h3>{pelicula.director}</h3>
                     <p>{pelicula.sinopsis}</p>
-                    <button>Valorar</button>
+                    <button onClick={handleValor}>Valorar</button>
                     <button onClick={handleDelete}>Eliminar</button>
                     <button onClick={handleDetalles}>Detalles</button>
                     <button onClick={handleModify}>Modificar</button>

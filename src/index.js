@@ -36,7 +36,7 @@ import Valoraciones from "views/pages/valoraciones.js"
 import Pelicula from "views/pages/pelicula.js"
 import Nueva from "views/pages/nueva.js"
 import EditarPelicula from "views/pages/editarPelicula.js"
-
+import EditarValoracion from "views/pages/valoracion.js"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -51,6 +51,7 @@ root.render(
       <Route path="*" element={<Navigate to="/index" replace />} />
       <Route path='/peliculas/:id' element={<Pelicula />} />
       <Route path='/peliculas/:id/editar' element={<EditarPelicula />} />
+      <Route path='/valoracion/:id/editar' element={<EditarValoracion />} />
       <Route path="/peliculas" element={<Peliculas />} /> 
       <Route path="/valoraciones" element={<Valoraciones />} /> 
       <Route path="/nueva"  element={<Nueva />} /> 
@@ -60,3 +61,4 @@ root.render(
   </BrowserRouter>
 );
 
+//
