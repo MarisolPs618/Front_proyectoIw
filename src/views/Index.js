@@ -40,7 +40,7 @@ import SectionLogin from "views/index-sections/SectionLogin.js";
 import SectionExamples from "views/index-sections/SectionExamples.js";
 import SectionDownload from "views/index-sections/SectionDownload.js";
 
-//import Productos from "views/pages/productos.js"
+
 
 function Index() {
   document.documentElement.classList.remove("nav-open");
@@ -55,19 +55,9 @@ function Index() {
       <IndexNavbar />
       <IndexHeader />
       <div className="main">
-        <SectionButtons />
-        <SectionNavbars />
-        <SectionNavigation />
-        <SectionProgress />
-        <SectionNotifications />
-        <SectionTypography />
-        <SectionJavaScript />
-        <SectionCarousel />
-        <SectionNucleoIcons />
-        <SectionDark />
-        <SectionLogin />
-        <SectionExamples />
-        <SectionDownload />
+        <h1>¡Bienvenidos a nuestra WebAPP!</h1>
+            <p>Esta web funciona como un repositorio de películas, donde puedes consultar toda la información sobre ellas y obviamente agregar películas nuevas.</p>
+            <p>También incluye la opción de valorar estas películas, dejando un comentario al respecto.</p>
         <DemoFooter />
       </div>
     </>

@@ -2,9 +2,9 @@ import React from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import IndexHeader from "components/Headers/IndexHeader.js";
 import DemoFooter from "components/Footers/DemoFooter";
-import SectionProveedores from "views/sections/proveedor-sections/sectionProveedores";
+import SectionValoraciones from "views/sections/valoraciones-sections/sectionValoraciones";
 
-function Proveedores() {
+function Valoraciones() {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
     document.body.classList.add("index");
@@ -18,9 +18,10 @@ function Proveedores() {
       <IndexHeader />
       <div className="main">
         <div className="page-title">
-          <h1>Proveedores</h1>
+          <h1>Valorar película</h1>
+          <h2></h2>
         </div>
-        <SectionProveedores />
+        <SectionValoraciones />
       </div>
       <br/>
       <DemoFooter className="index-page"/>
@@ -28,7 +29,7 @@ function Proveedores() {
   );
 }
 
-export default Proveedores;
+export default Valoraciones;
 
 
 
