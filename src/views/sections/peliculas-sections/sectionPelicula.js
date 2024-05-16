@@ -2,7 +2,22 @@ import React from "react";
 import axios from "axios";
 
 export const SectionPelicula = (props) => {
-    const { pelicula } = props;
+    const { pelicula} = props;
+
+    const handleDelete = () => {
+        axios.delete(`http://127.0.0.1:8000/pelicula/${pelicula.pk}`)
+        window.location.reload();
+           
+    };
+
+    const handleDetalles = () => {
+        window.location.href = `/peliculas/${pelicula.pk}`;
+    };
+
+    const handleModify = () => {
+        window.location.href = `/peliculas/${pelicula.pk}/editar`;
+    };
+
 
     const handleDelete = () => {
         axios.delete(`http://127.0.0.1:8000/pelicula/${pelicula.pk}`)
@@ -20,7 +35,8 @@ export const SectionPelicula = (props) => {
                     <p>{pelicula.sinopsis}</p>
                     <button>Valorar</button>
                     <button onClick={handleDelete}>Eliminar</button>
-                    <button>Modificar</button>
+                    <button onClick={handleDetalles}>Detalles</button>
+                    <button onClick={handleModify}>Modificar</button>
                 </div>
             </div>
         </div>
@@ -28,5 +44,3 @@ export const SectionPelicula = (props) => {
 };
 
 export default SectionPelicula;
-
-//
